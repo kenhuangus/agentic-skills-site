@@ -1,4 +1,4 @@
-﻿# OWASP Agentic Skills Top 10 (AST01–AST10) · Interactive Presentation Deck
+# OWASP Agentic Skills Top 10 (AST01–AST10) · Interactive Presentation Deck
 
 > **The Definitive Threat Modeling & Security Framework for Agentic AI Skills, Memory & Tools (2026 Edition)**  
 > Presented by **Ken Huang, CISSP** · OWASP AIVSS & Agentic Skills Top 10 Project Leader · Fellow & Co-Chair, CSA AI Safety Working Groups · CEO, DistributedApps.ai
@@ -8,7 +8,7 @@
 ## 🌐 Live Presentation Site
 - **Live URL**: [https://kenhuangus.github.io/agentic-skills-site/#1](https://kenhuangus.github.io/agentic-skills-site/#1)
 - **OWASP Official Repository**: [https://github.com/OWASP/www-project-agentic-skills-top-10](https://github.com/OWASP/www-project-agentic-skills-top-10)
-- **Video Walkthrough Tutorial**: [https://www.youtube.com/@KenHuang-h2n](https://www.youtube.com/@KenHuang-h2n)
+- **Video Walkthrough Tutorial**: [https://www.youtube.com/watch?v=l-uwnCzRRE0](https://www.youtube.com/watch?v=l-uwnCzRRE0)
 
 ---
 
