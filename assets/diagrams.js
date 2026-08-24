@@ -1,4 +1,4 @@
-﻿/* ============================================================
+/* ============================================================
    OWASP Agentic Skills Top 10 — Hand-Drawn Diagrams (rough.js)
    High-Contrast Excalidraw-Style Threat Architecture Visuals
    ============================================================ */
@@ -396,9 +396,13 @@
 
   window.AST_DIAGRAMS = { renderSlide, renderAll };
 
-  document.addEventListener("DOMContentLoaded", () => {
-    setTimeout(renderAll, 100);
-  });
+  if (document.readyState === 'loading') {
+    document.addEventListener("DOMContentLoaded", () => {
+      setTimeout(renderAll, 100);
+    });
+  } else {
+    setTimeout(renderAll, 50);
+  }
 
   document.addEventListener("ast:lang", () => {
     setTimeout(renderAll, 50);

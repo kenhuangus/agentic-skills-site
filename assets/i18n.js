@@ -499,10 +499,16 @@
     isZh: () => currentLang === 'zh'
   };
 
-  document.addEventListener('DOMContentLoaded', () => {
+  function initI18n() {
     document.querySelectorAll('.lang__btn').forEach(btn => {
       btn.addEventListener('click', () => setLang(btn.dataset.lang));
     });
     setLang(getLang());
-  });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initI18n);
+  } else {
+    initI18n();
+  }
 })();
