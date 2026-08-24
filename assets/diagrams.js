@@ -1,4 +1,4 @@
-﻿/* ============================================================
+/* ============================================================
    OWASP Agentic Skills Top 10 — Hand-Drawn Diagrams (rough.js)
    High-Contrast Excalidraw-Style Threat Architecture Visuals
    Zero-Overlap / Clean Margins / Automatic Text Layout
@@ -97,39 +97,47 @@
     const s = scene(host, 880, 520);
     const zh = isZh();
 
-    chip(s, 290, 15, 300, 44, zh ? "OWASP Agentic Skills Top 10\n核心风险全景架构" : "OWASP Agentic Skills Top 10\nExecutive Risk Taxonomy", COL.accent, { size: 14, fill: hex(COL.accent, 0.15) });
+    // Top Header Badge
+    chip(s, 280, 12, 320, 44, zh ? "OWASP Agentic Skills Top 10\n核心风险全景架构" : "OWASP Agentic Skills Top 10\nExecutive Risk Taxonomy", COL.accent, { size: 14, fill: hex(COL.accent, 0.15) });
+
+    // Central Axes Guides (clean gap in middle)
+    line(s, 30, 280, 375, 280, { stroke: COL.line, strokeWidth: 1.4 });
+    line(s, 505, 280, 850, 280, { stroke: COL.line, strokeWidth: 1.4 });
+    line(s, 440, 68, 440, 255, { stroke: COL.line, strokeWidth: 1.4 });
+    line(s, 440, 305, 440, 505, { stroke: COL.line, strokeWidth: 1.4 });
+
+    // Central Hub Badge
+    chip(s, 380, 258, 120, 44, zh ? "4 大风险象限\nAST01–AST10" : "4 DOMAINS\nAST01–AST10", COL.accent, { size: 11.5, fill: "#ffffff" });
 
     // Q1: Sourcing & Registry Trust (Top-Left)
-    rect(s, 30, 80, 390, 190, { fill: hex(COL.blue, 0.06), stroke: COL.blue, strokeWidth: 2 });
-    txt(s, 45, 108, zh ? "1. 技能来源与注册表信任 (Sourcing & Trust)" : "1. Skill Sourcing & Registry Trust", { size: 15, weight: 700, col: COL.blue });
-    chip(s, 45, 125, 175, 60, zh ? "AST01 恶意技能\n(窃密木马 / 记忆后门)" : "AST01 Malicious Skills\n(AMOS Stealer / SOUL.md)", COL.blue, { size: 11.5 });
-    chip(s, 230, 125, 175, 60, zh ? "AST02 供应链妥协\n(依赖混淆 / 钩子RCE)" : "AST02 Supply Chain\n(Dependency Confusion / RCE)", COL.teal, { size: 11.5 });
-    chip(s, 135, 195, 180, 55, zh ? "AST04 不安全元数据\n(品牌仿冒 / YAML反序列化)" : "AST04 Insecure Metadata\n(Spoofing / YAML RCE)", COL.grape, { size: 11.5 });
+    rect(s, 30, 72, 395, 195, { fill: hex(COL.blue, 0.06), stroke: COL.blue, strokeWidth: 2 });
+    txt(s, 48, 98, zh ? "1. 技能来源与注册表信任 (Sourcing & Trust)" : "1. Skill Sourcing & Registry Trust", { size: 14.5, weight: 700, col: COL.blue });
+    chip(s, 48, 114, 175, 62, zh ? "AST01 恶意技能\n(AMOS木马 / 记忆后门)" : "AST01 Malicious Skills\n(AMOS Stealer / SOUL.md)", COL.blue, { size: 11.5 });
+    chip(s, 233, 114, 175, 62, zh ? "AST02 供应链妥协\n(依赖混淆 / 钩子RCE)" : "AST02 Supply Chain\n(Dependency Confusion / RCE)", COL.teal, { size: 11.5 });
+    chip(s, 140, 188, 180, 60, zh ? "AST04 不安全元数据\n(品牌仿冒 / YAML反序列化)" : "AST04 Insecure Metadata\n(Spoofing / YAML RCE)", COL.grape, { size: 11.5 });
 
     // Q2: Execution Boundaries & Privilege (Top-Right)
-    rect(s, 460, 80, 390, 190, { fill: hex(COL.orange, 0.06), stroke: COL.orange, strokeWidth: 2 });
-    txt(s, 475, 108, zh ? "2. 执行边界与特权隔离 (Execution Boundaries)" : "2. Execution Boundaries & Privilege", { size: 15, weight: 700, col: COL.orange });
-    chip(s, 475, 125, 175, 60, zh ? "AST03 特权过大技能\n(LPCI逻辑注入 / 删库)" : "AST03 Over-Privileged\n(LPCI Injection / DB Wipe)", COL.orange, { size: 11.5 });
-    chip(s, 660, 125, 175, 60, zh ? "AST05 不受信任外部指令\n(作者跑路 / 中继放大)" : "AST05 External Instructions\n(Rug-Pull / Relay Drift)", COL.red, { size: 11.5 });
-    chip(s, 565, 195, 180, 55, zh ? "AST06 弱隔离机制\n(宿主逃逸 / Localhost跨域)" : "AST06 Weak Isolation\n(Host Escape / Loopback)", COL.cyan, { size: 11.5 });
+    rect(s, 455, 72, 395, 195, { fill: hex(COL.orange, 0.06), stroke: COL.orange, strokeWidth: 2 });
+    txt(s, 473, 98, zh ? "2. 执行边界与特权隔离 (Execution Boundaries)" : "2. Execution Boundaries & Privilege", { size: 14.5, weight: 700, col: COL.orange });
+    chip(s, 473, 114, 175, 62, zh ? "AST03 特权过大技能\n(LPCI逻辑注入 / 删库)" : "AST03 Over-Privileged\n(LPCI Injection / DB Wipe)", COL.orange, { size: 11.5 });
+    chip(s, 658, 114, 175, 62, zh ? "AST05 不受信任外部指令\n(作者跑路 / 中继放大)" : "AST05 External Instructions\n(Rug-Pull / Relay Drift)", COL.red, { size: 11.5 });
+    chip(s, 565, 188, 180, 60, zh ? "AST06 弱隔离机制\n(宿主逃逸 / Localhost跨域)" : "AST06 Weak Isolation\n(Host Escape / Loopback)", COL.cyan, { size: 11.5 });
 
     // Q3: Lifecycle Governance & Defense (Bottom-Left)
-    rect(s, 30, 290, 390, 200, { fill: hex(COL.yellow, 0.06), stroke: COL.yellow, strokeWidth: 2 });
-    txt(s, 45, 318, zh ? "3. 全生命周期治理与防御 (Lifecycle Governance)" : "3. Lifecycle Governance & Defense", { size: 15, weight: 700, col: COL.yellow });
-    chip(s, 45, 335, 175, 60, zh ? "AST07 更新漂移\n(静默带毒升级 / 热重载)" : "AST07 Update Drift\n(Silent Auto-Update / Drift)", COL.yellow, { size: 11.5 });
-    chip(s, 230, 335, 175, 60, zh ? "AST08 扫描能力不足\n(自然语言免杀 / 截断失明)" : "AST08 Poor Scanning\n(NL Evasion / Truncation)", COL.pink, { size: 11.5 });
-    chip(s, 135, 410, 180, 60, zh ? "AST09 治理缺失\n(影子AI / 缺乏双向审计)" : "AST09 No Governance\n(Shadow AI / Audit Gaps)", COL.indigo, { size: 11.5 });
+    rect(s, 30, 292, 395, 212, { fill: hex(COL.yellow, 0.06), stroke: COL.yellow, strokeWidth: 2 });
+    txt(s, 48, 318, zh ? "3. 全生命周期治理与防御 (Lifecycle Governance)" : "3. Lifecycle Governance & Defense", { size: 14.5, weight: 700, col: COL.yellow });
+    chip(s, 48, 334, 175, 62, zh ? "AST07 更新漂移\n(静默带毒升级 / 热重载)" : "AST07 Update Drift\n(Silent Auto-Update / Drift)", COL.yellow, { size: 11.5 });
+    chip(s, 233, 334, 175, 62, zh ? "AST08 扫描能力不足\n(自然语言免杀 / 截断失明)" : "AST08 Poor Scanning\n(NL Evasion / Truncation)", COL.pink, { size: 11.5 });
+    chip(s, 140, 410, 180, 64, zh ? "AST09 治理缺失\n(影子AI / 缺乏双向审计)" : "AST09 No Governance\n(Shadow AI / Audit Gaps)", COL.indigo, { size: 11.5 });
 
     // Q4: Cross-Platform Interoperability (Bottom-Right)
-    rect(s, 460, 290, 390, 200, { fill: hex(COL.green, 0.06), stroke: COL.green, strokeWidth: 2 });
-    txt(s, 475, 318, zh ? "4. 跨平台重用与标准 (Cross-Platform)" : "4. Cross-Platform Interoperability", { size: 15, weight: 700, col: COL.green });
-    chip(s, 475, 335, 360, 60, zh ? "AST10 跨平台重用\n(清单剥离 / 隐式提权 / 跨市场套利)" : "AST10 Cross-Platform Reuse\n(Manifest Stripping / Privilege Loss / Arbitrage)", COL.green, { size: 12.5 });
-    chip(s, 475, 410, 360, 60, zh ? "★ 核心解法：通用技能格式 (USF v1.0)\n密码学绑定 + 默认保护 SOUL.md / MEMORY.md" : "★ Core Solution: Universal Skill Format (USF v1.0)\nCryptographic Hashes + Default-Deny Identity Protection", COL.accent, { size: 12, fill: hex(COL.accent, 0.18) });
+    rect(s, 455, 292, 395, 212, { fill: hex(COL.green, 0.06), stroke: COL.green, strokeWidth: 2 });
+    txt(s, 473, 318, zh ? "4. 跨平台重用与标准 (Cross-Platform)" : "4. Cross-Platform Interoperability", { size: 14.5, weight: 700, col: COL.green });
+    chip(s, 473, 334, 360, 62, zh ? "AST10 跨平台重用\n(清单剥离 / 隐式提权 / 跨市场套利)" : "AST10 Cross-Platform Reuse\n(Manifest Stripping / Privilege Loss / Arbitrage)", COL.green, { size: 12 });
+    chip(s, 473, 410, 360, 64, zh ? "★ 核心解法：通用技能格式 (USF v1.0)\n密码学绑定 + 默认保护 SOUL.md / MEMORY.md" : "★ Core Solution: Universal Skill Format (USF v1.0)\nCryptographic Hashes + Default-Deny Identity Protection", COL.accent, { size: 11.5, fill: hex(COL.accent, 0.18) });
 
-    arrow(s, 440, 65, 225, 80, { stroke: COL.blue });
-    arrow(s, 440, 65, 655, 80, { stroke: COL.orange });
-    arrow(s, 440, 65, 225, 290, { stroke: COL.yellow });
-    arrow(s, 440, 65, 655, 290, { stroke: COL.green });
+    // Header Connector Arrow
+    arrow(s, 440, 56, 440, 68, { stroke: COL.accent });
   }
 
   /* 2. Decision Tree Flowchart */
