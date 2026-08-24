@@ -216,11 +216,13 @@
     "s20.p1": "Ken Huang, CISSP — AI Book Author · OWASP AIVSS Lead · CSA Fellow · CEO, DistributedApps.ai",
     "s20.p2": "Scan the QR code to connect and explore the open-source OWASP Agentic Skills Top 10 framework.",
     "s20.more": "Official Resources & Links",
-    "s20.owaspLink": "OWASP Project Repository — github.com/OWASP/www-project-agentic-skills-top-10 ↗",
-    "s20.videoLink": "Full Video Tutorial & Walkthrough — YouTube ↗",
-    "s20.siteLink": "DistributedApps.ai — Agentic AI Security ↗",
-    "s20.maestroLink": "MAESTRO Sentinel Assessment Engine — maestro-sentinel.com ↗",
-    "s20.cta": "Contribute on GitHub ↗"
+    "s20.owaspLink": "OWASP Official Project Repository ↗",
+    "s20.videoLink": "Full Video Tutorial & Walkthrough ↗",
+    "s20.siteLink": "DistributedApps.ai AI Security ↗",
+    "s20.maestroLink": "MAESTRO Sentinel Assessment Engine ↗",
+    "s20.cta": "Contribute on GitHub ↗",
+    "s20.replay": "Back to First Slide ↺",
+    "s20.qrCap": "Scan QR to Connect with Ken Huang"
 },
     zh: {
     "ui.lang": "语言 / Language",
@@ -437,11 +439,13 @@
     "s20.p1": "Ken Huang, CISSP — AI 著作作者 · OWASP AIVSS 负责人 · CSA Fellow · DistributedApps.ai CEO",
     "s20.p2": "扫描名片二维码建立联系，共同推进 Agent 技能安全标准化建设。",
     "s20.more": "官方资源与参考链接",
-    "s20.owaspLink": "OWASP 官方项目主页 — github.com/OWASP/www-project-agentic-skills-top-10 ↗",
-    "s20.videoLink": "完整视频教程与解析 — YouTube ↗",
-    "s20.siteLink": "DistributedApps.ai — Agentic AI 安全咨询 ↗",
-    "s20.maestroLink": "MAESTRO Sentinel 威胁建模分析引擎 — maestro-sentinel.com ↗",
-    "s20.cta": "在 GitHub 上贡献 ↗"
+    "s20.owaspLink": "OWASP 官方项目 GitHub 仓库 ↗",
+    "s20.videoLink": "完整视频教程与深度解析 (YouTube) ↗",
+    "s20.siteLink": "DistributedApps.ai 企业安全咨询 ↗",
+    "s20.maestroLink": "MAESTRO Sentinel 评估分析引擎 ↗",
+    "s20.cta": "在 GitHub 上贡献 ↗",
+    "s20.replay": "返回封面 ↺",
+    "s20.qrCap": "微信 / 领英扫码与 Ken Huang 建立联系"
 }
   };
 

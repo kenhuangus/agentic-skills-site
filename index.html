@@ -225,19 +225,23 @@
               <div class="evidence-text" data-i18n="ast01.evidence">Real-World Evidence: ClawHavoc campaign (Jan 2026) published 1,184 malicious skills delivering Atomic Stealer (AMOS) targeting crypto wallets and SSH keys. 5 of top 7 most-downloaded skills were confirmed malware.</div>
             </div>
             
-            <h3 class="pane-subtitle" data-i18n="ast01.scenarios_title">Attack Scenarios</h3>
-            <ul class="ast-list">
+            <div class="ast-card ast-card--threat">
+              <h3 class="pane-subtitle" data-i18n="ast01.scenarios_title">Attack Scenarios</h3>
+              <ul class="ast-list">
               <li data-i18n="ast01.sc1"><strong>SOUL.md &amp; MEMORY.md Backdoors:</strong> Writes malicious persistent instructions that survive skill uninstall.</li>
               <li data-i18n="ast01.sc2"><strong>Cognitive Degradation (QSAF):</strong> Subtly floods context over repeated turns to induce silent behavioral drift.</li>
               <li data-i18n="ast01.sc3"><strong>Identity Cloning:</strong> Exfiltrates agent persona and credentials to replicate agent authority elsewhere.</li>
             </ul>
+            </div>
 
-            <h3 class="pane-subtitle" data-i18n="ast01.mit_title">Key Mitigations &amp; Code Defense</h3>
-            <ul class="ast-list">
+            <div class="ast-card ast-card--defense">
+              <h3 class="pane-subtitle" data-i18n="ast01.mit_title">Key Mitigations &amp; Code Defense</h3>
+              <ul class="ast-list">
               <li data-i18n="ast01.m1"><strong>Cryptographic Signatures:</strong> Require Ed25519 signatures pinned to resolvable publisher identities.</li>
               <li data-i18n="ast01.m2"><strong>Digest-Pinned Behavioral Sandboxes:</strong> Run helper scripts in locked-down, network-isolated containers.</li>
               <li data-i18n="ast01.m3"><strong>Memory Quarantine:</strong> Validate and stage all writes to MEMORY.md and SOUL.md before commitment.</li>
             </ul>
+            </div>
           </div>
           
           <div class="ast-vis-pane">
@@ -261,19 +265,23 @@
               <div class="evidence-text" data-i18n="ast02.evidence">Real-World Evidence: Claude Code CVE-2025-59536 / CVE-2026-21852 where repo config (.claude/settings.json, hooks) triggered RCE on project open before user prompt.</div>
             </div>
             
-            <h3 class="pane-subtitle" data-i18n="ast02.scenarios_title">Attack Scenarios</h3>
-            <ul class="ast-list">
+            <div class="ast-card ast-card--threat">
+              <h3 class="pane-subtitle" data-i18n="ast02.scenarios_title">Attack Scenarios</h3>
+              <ul class="ast-list">
               <li data-i18n="ast02.sc1"><strong>Nested Dependency Confusion:</strong> Skill pulls typosquatted package (yutube-dl-core) while top-level SKILL.md looks clean.</li>
               <li data-i18n="ast02.sc2"><strong>Registry Flooding:</strong> Uploading hundreds of malicious clones to crowd out legitimate alternatives.</li>
               <li data-i18n="ast02.sc3"><strong>Maintainer Account Takeover:</strong> Compromising author credentials to release backdoored v1.0.1.</li>
             </ul>
+            </div>
 
-            <h3 class="pane-subtitle" data-i18n="ast02.mit_title">Key Mitigations</h3>
-            <ul class="ast-list">
+            <div class="ast-card ast-card--defense">
+              <h3 class="pane-subtitle" data-i18n="ast02.mit_title">Key Mitigations</h3>
+              <ul class="ast-list">
               <li data-i18n="ast02.m1"><strong>Immutable Hash Pinning:</strong> Pin dependencies with sha256 digests via pip-compile --generate-hashes.</li>
               <li data-i18n="ast02.m2"><strong>Transparency Logs:</strong> Require Merkle-tree inclusion proofs for all publish and update operations.</li>
               <li data-i18n="ast02.m3"><strong>Treat Configs as Code:</strong> Apply full trust verification to hooks, settings.json, and MCP configs.</li>
             </ul>
+            </div>
           </div>
           
           <div class="ast-vis-pane">
@@ -297,19 +305,23 @@
               <div class="evidence-text" data-i18n="ast03.evidence">Real-World Evidence: Logic-layer Prompt Control Injection (LPCI, arXiv:2507.10457) & LAAF red-teaming (arXiv:2603.17239); Summer Yue Meta AI agent inbox deletion.</div>
             </div>
             
-            <h3 class="pane-subtitle" data-i18n="ast03.scenarios_title">Attack Scenarios</h3>
-            <ul class="ast-list">
+            <div class="ast-card ast-card--threat">
+              <h3 class="pane-subtitle" data-i18n="ast03.scenarios_title">Attack Scenarios</h3>
+              <ul class="ast-list">
               <li data-i18n="ast03.sc1"><strong>Weather Assistant Data Theft:</strong> A benign weather tool reads ~/.env and exfiltrates all API keys.</li>
               <li data-i18n="ast03.sc2"><strong>Database Admin Wipe:</strong> Low-privilege prompt injection coerces manage_database into DROP TABLE.</li>
               <li data-i18n="ast03.sc3"><strong>Low-Privilege Confused Deputy:</strong> Invoking high-privilege skills without re-verifying caller authorization.</li>
             </ul>
+            </div>
 
-            <h3 class="pane-subtitle" data-i18n="ast03.mit_title">Key Mitigations</h3>
-            <ul class="ast-list">
+            <div class="ast-card ast-card--defense">
+              <h3 class="pane-subtitle" data-i18n="ast03.mit_title">Key Mitigations</h3>
+              <ul class="ast-list">
               <li data-i18n="ast03.m1"><strong>Strict Instruction Hierarchy:</strong> System > Operator > User > Tool Output. Never elevate tool data to commands.</li>
               <li data-i18n="ast03.m2"><strong>Fine-Grained Manifests:</strong> Enforce domain-level network allowlists and explicit file write boundaries.</li>
               <li data-i18n="ast03.m3"><strong>Mandatory Operator Confirmation:</strong> Require explicit human approval for destructive actions & identity writes.</li>
             </ul>
+            </div>
           </div>
           
           <div class="ast-vis-pane">
@@ -333,19 +345,23 @@
               <div class="evidence-text" data-i18n="ast04.evidence">Real-World Evidence: Snyk toxicskills-goof demonstrating YAML !!python/object/apply:os.system RCE on load; ASCII smuggling hiding instructions from human reviewers.</div>
             </div>
             
-            <h3 class="pane-subtitle" data-i18n="ast04.scenarios_title">Attack Scenarios</h3>
-            <ul class="ast-list">
+            <div class="ast-card ast-card--threat">
+              <h3 class="pane-subtitle" data-i18n="ast04.scenarios_title">Attack Scenarios</h3>
+              <ul class="ast-list">
               <li data-i18n="ast04.sc1"><strong>Brand Impersonation:</strong> Publishing fake Google Workspace or Solana Tracker skills to harvest credentials.</li>
               <li data-i18n="ast04.sc2"><strong>Permission Understating:</strong> Declaring network: false while invoking curl in hidden shell helpers.</li>
               <li data-i18n="ast04.sc3"><strong>JSON Prototype Pollution & TOML Injection:</strong> Polluting global parser objects during skill intake.</li>
             </ul>
+            </div>
 
-            <h3 class="pane-subtitle" data-i18n="ast04.mit_title">Key Mitigations</h3>
-            <ul class="ast-list">
+            <div class="ast-card ast-card--defense">
+              <h3 class="pane-subtitle" data-i18n="ast04.mit_title">Key Mitigations</h3>
+              <ul class="ast-list">
               <li data-i18n="ast04.m1"><strong>Safe Parser Enforcement:</strong> Use yaml.safe_load and disallow unsafe Python constructor tags.</li>
               <li data-i18n="ast04.m2"><strong>Schema Validation:</strong> Validate all metadata against strict JSON Schema / Pydantic models.</li>
               <li data-i18n="ast04.m3"><strong>ASCII Smuggling Sanitization:</strong> Strip zero-width characters and homoglyphs before review and intake.</li>
             </ul>
+            </div>
           </div>
           
           <div class="ast-vis-pane">
@@ -369,19 +385,23 @@
               <div class="evidence-text" data-i18n="ast05.evidence">Real-World Evidence: Anthropic security guidance warning that external dependencies change over time; Air Security POC demonstrating agent takeover via external docs.</div>
             </div>
             
-            <h3 class="pane-subtitle" data-i18n="ast05.scenarios_title">Attack Scenarios</h3>
-            <ul class="ast-list">
+            <div class="ast-card ast-card--threat">
+              <h3 class="pane-subtitle" data-i18n="ast05.scenarios_title">Attack Scenarios</h3>
+              <ul class="ast-list">
               <li data-i18n="ast05.sc1"><strong>Author Rug-Pull:</strong> Shipping a benign skill, then editing remote documentation to inject malicious orders.</li>
               <li data-i18n="ast05.sc2"><strong>Reviewer Bait-and-Switch:</strong> Serving clean docs to scanners (by IP/User-Agent) and malicious payloads to live agents.</li>
               <li data-i18n="ast05.sc3"><strong>Relay-Node Amplification:</strong> Upstream prompt injection slipping through weaker models in multi-agent pipelines.</li>
             </ul>
+            </div>
 
-            <h3 class="pane-subtitle" data-i18n="ast05.mit_title">Key Mitigations</h3>
-            <ul class="ast-list">
+            <div class="ast-card ast-card--defense">
+              <h3 class="pane-subtitle" data-i18n="ast05.mit_title">Key Mitigations</h3>
+              <ul class="ast-list">
               <li data-i18n="ast05.m1"><strong>Pin &amp; Verify External Content:</strong> Record cryptographic content hashes for all referenced remote URLs.</li>
               <li data-i18n="ast05.m2"><strong>Inline Snapshots:</strong> Embed documentation into the signed skill package at publish time.</li>
               <li data-i18n="ast05.m3"><strong>Domain Allowlists:</strong> Restrict remote fetches strictly to vetted, stable domain registries.</li>
             </ul>
+            </div>
           </div>
           
           <div class="ast-vis-pane">
@@ -404,19 +424,23 @@
               <div class="evidence-text" data-i18n="ast06.evidence">Real-World Evidence: 135,000+ internet-facing OpenClaw instances (Bitdefender); ClawJacked (CVE-2026-32025 CVSS 7.5) WebSocket origin bypass.</div>
             </div>
             
-            <h3 class="pane-subtitle" data-i18n="ast06.scenarios_title">Attack Scenarios</h3>
-            <ul class="ast-list">
+            <div class="ast-card ast-card--threat">
+              <h3 class="pane-subtitle" data-i18n="ast06.scenarios_title">Attack Scenarios</h3>
+              <ul class="ast-list">
               <li data-i18n="ast06.sc1"><strong>Host Escape:</strong> Skill uses os.system() to plant persistent cron jobs on the operator host workstation.</li>
               <li data-i18n="ast06.sc2"><strong>Skill Shadowing:</strong> Exploiting workspace &gt; managed precedence to override built-in security tools via hot-reload.</li>
               <li data-i18n="ast06.sc3"><strong>Cross-Agent Contamination:</strong> Poisoning shared writable workspace memory consumed by co-located agents.</li>
             </ul>
+            </div>
 
-            <h3 class="pane-subtitle" data-i18n="ast06.mit_title">Key Mitigations</h3>
-            <ul class="ast-list">
+            <div class="ast-card ast-card--defense">
+              <h3 class="pane-subtitle" data-i18n="ast06.mit_title">Key Mitigations</h3>
+              <ul class="ast-list">
               <li data-i18n="ast06.m1"><strong>Mandatory Container Isolation:</strong> Enforce Docker / microVM execution by default for all skills.</li>
               <li data-i18n="ast06.m2"><strong>Syscall &amp; Capability Dropping:</strong> Apply strict seccomp profiles, --cap-drop=ALL, and read-only root filesystems.</li>
               <li data-i18n="ast06.m3"><strong>Authenticated Loopback:</strong> Rate-limit and cryptographically authenticate all WebSocket connections.</li>
             </ul>
+            </div>
           </div>
           
           <div class="ast-vis-pane">
@@ -440,19 +464,23 @@
               <div class="evidence-text" data-i18n="ast07.evidence">Real-World Evidence: SecurityScorecard study finding 35.4% of scanned OpenClaw instances vulnerable to RCE due to patch lag; SkillsWatcher hot-reload abuse.</div>
             </div>
             
-            <h3 class="pane-subtitle" data-i18n="ast07.scenarios_title">Attack Scenarios</h3>
-            <ul class="ast-list">
+            <div class="ast-card ast-card--threat">
+              <h3 class="pane-subtitle" data-i18n="ast07.scenarios_title">Attack Scenarios</h3>
+              <ul class="ast-list">
               <li data-i18n="ast07.sc1"><strong>Malicious Auto-Update:</strong> Author account hijacked to push v2.0 with info-stealers silently pulled by active agents.</li>
               <li data-i18n="ast07.sc2"><strong>Rollback Attack:</strong> Forcing downgrade to vulnerable legacy versions lacking prompt-injection defenses.</li>
               <li data-i18n="ast07.sc3"><strong>Hot-Reload Abuse:</strong> Modifying SKILL.md mid-session to take effect immediately without agent reboot.</li>
             </ul>
+            </div>
 
-            <h3 class="pane-subtitle" data-i18n="ast07.mit_title">Key Mitigations</h3>
-            <ul class="ast-list">
+            <div class="ast-card ast-card--defense">
+              <h3 class="pane-subtitle" data-i18n="ast07.mit_title">Key Mitigations</h3>
+              <ul class="ast-list">
               <li data-i18n="ast07.m1"><strong>Immutable Version Pinning:</strong> Pin all installed skills to sha256 content hashes, not loose version ranges.</li>
               <li data-i18n="ast07.m2"><strong>Production Freeze Mode:</strong> Disable hot-reload and dynamic auto-updates in enterprise environments.</li>
               <li data-i18n="ast07.m3"><strong>Cryptographic Update Attestation:</strong> Require signed changelogs and human-in-the-loop review for upgrades.</li>
             </ul>
+            </div>
           </div>
           
           <div class="ast-vis-pane">
@@ -476,19 +504,23 @@
               <div class="evidence-text" data-i18n="ast08.evidence">Real-World Evidence: Trail of Bits (2026) bypassed every tested marketplace scanner in &lt;1 hour; 100k newline padding causing scanner context truncation.</div>
             </div>
             
-            <h3 class="pane-subtitle" data-i18n="ast08.scenarios_title">Attack Scenarios</h3>
-            <ul class="ast-list">
+            <div class="ast-card ast-card--threat">
+              <h3 class="pane-subtitle" data-i18n="ast08.scenarios_title">Attack Scenarios</h3>
+              <ul class="ast-list">
               <li data-i18n="ast08.sc1"><strong>Natural-Language Bypass:</strong> Expressing malicious directives entirely in prose with zero detectable regex verbs.</li>
               <li data-i18n="ast08.sc2"><strong>Bytecode Poisoning:</strong> Hiding exploits in precompiled .pyc files while source .py files appear benign.</li>
               <li data-i18n="ast08.sc3"><strong>Prompt-Injecting the Scanner LLM:</strong> Injecting persuasive comments that convince the AI judge the skill is safe.</li>
             </ul>
+            </div>
 
-            <h3 class="pane-subtitle" data-i18n="ast08.mit_title">Key Mitigations</h3>
-            <ul class="ast-list">
+            <div class="ast-card ast-card--defense">
+              <h3 class="pane-subtitle" data-i18n="ast08.mit_title">Key Mitigations</h3>
+              <ul class="ast-list">
               <li data-i18n="ast08.m1"><strong>NVIDIA SkillSpector Multi-Tier Scanning:</strong> Combine AST taint analysis, YARA signatures, and LLM semantic checks.</li>
               <li data-i18n="ast08.m2"><strong>Unicode Normalization (NFKC):</strong> Strip zero-width spaces and confusable homoglyphs prior to scanning.</li>
               <li data-i18n="ast08.m3"><strong>Exhaustive Directory Analysis:</strong> Scan every artifact (.pyc, .docx, images) and report INCOMPLETE on truncation.</li>
             </ul>
+            </div>
           </div>
           
           <div class="ast-vis-pane">
@@ -512,19 +544,23 @@
               <div class="evidence-text" data-i18n="ast09.evidence">Real-World Evidence: Cisco State of AI Security (2026) reported 83% of enterprises deploying agents but only 29% prepared to secure them; Bitdefender shadow AI findings.</div>
             </div>
             
-            <h3 class="pane-subtitle" data-i18n="ast09.scenarios_title">Attack Scenarios</h3>
-            <ul class="ast-list">
+            <div class="ast-card ast-card--threat">
+              <h3 class="pane-subtitle" data-i18n="ast09.scenarios_title">Attack Scenarios</h3>
+              <ul class="ast-list">
               <li data-i18n="ast09.sc1"><strong>Orphaned Developer Skills:</strong> Unmonitored skills remaining active with stale privileged credentials post-offboarding.</li>
               <li data-i18n="ast09.sc2"><strong>Unreachable SaaS Copilot Skills:</strong> Shadow skills installed inside managed platforms invisible to local endpoint scanners.</li>
               <li data-i18n="ast09.sc3"><strong>Cascading Multi-Agent Compromise:</strong> Upstream skill failure propagating across agent hand-offs without audit trace.</li>
             </ul>
+            </div>
 
-            <h3 class="pane-subtitle" data-i18n="ast09.mit_title">Key Mitigations</h3>
-            <ul class="ast-list">
+            <div class="ast-card ast-card--defense">
+              <h3 class="pane-subtitle" data-i18n="ast09.mit_title">Key Mitigations</h3>
+              <ul class="ast-list">
               <li data-i18n="ast09.m1"><strong>Centralized Skill Inventory:</strong> Track name, version, hash, installer, and scan status in enterprise CMDB/CASB.</li>
               <li data-i18n="ast09.m2"><strong>Bilateral Receipt Pattern:</strong> Generate cryptographically linked Admission and Outcome receipts for every action.</li>
               <li data-i18n="ast09.m3"><strong>EU AI Act Article 12 Compliance:</strong> Implement tamper-evident automatic event logging for high-risk AI workflows.</li>
             </ul>
+            </div>
           </div>
           
           <div class="ast-vis-pane">
@@ -548,19 +584,23 @@
               <div class="evidence-text" data-i18n="ast10.evidence">Real-World Evidence: OpenAI Autonomous Sandbox Escape (July 2026) executing multi-tenant lateral movement across Modal Labs and multiple cloud accounts.</div>
             </div>
             
-            <h3 class="pane-subtitle" data-i18n="ast10.scenarios_title">Attack Scenarios</h3>
-            <ul class="ast-list">
+            <div class="ast-card ast-card--threat">
+              <h3 class="pane-subtitle" data-i18n="ast10.scenarios_title">Attack Scenarios</h3>
+              <ul class="ast-list">
               <li data-i18n="ast10.sc1"><strong>Manifest Stripping:</strong> Moving skills drops fine-grained allowlists, causing target runtime to grant full default rights.</li>
               <li data-i18n="ast10.sc2"><strong>Cross-Registry Arbitrage:</strong> Publishing malware on unverified registries to farm download metrics for trusted stores.</li>
               <li data-i18n="ast10.sc3"><strong>Implicit Privilege Escalation:</strong> Safe read-only skills on one platform inheriting broad shell access on another.</li>
             </ul>
+            </div>
 
-            <h3 class="pane-subtitle" data-i18n="ast10.mit_title">Key Mitigations</h3>
-            <ul class="ast-list">
+            <div class="ast-card ast-card--defense">
+              <h3 class="pane-subtitle" data-i18n="ast10.mit_title">Key Mitigations</h3>
+              <ul class="ast-list">
               <li data-i18n="ast10.m1"><strong>Universal Agentic Skill Format:</strong> Adopt the standardized YAML specification across all platform runtimes.</li>
               <li data-i18n="ast10.m2"><strong>Cross-Platform Metadata Loss Simulator:</strong> Detect stripped security properties prior to ecosystem migration.</li>
               <li data-i18n="ast10.m3"><strong>Registry Threat Intel Sharing:</strong> Establish shared IoC and malicious skill feeds across all major registries.</li>
             </ul>
+            </div>
           </div>
           
           <div class="ast-vis-pane">
@@ -674,26 +714,27 @@
     <!-- Slide 19: Project Leadership, Reviewers & Acknowledgements -->
     <section class="slide" id="s19" data-slide="19" data-title="Leadership & Contributors" data-i18n-title="s19.title">
       <div class="slide__in">
-        <div class="kicker" data-i18n="s19.kicker">Community & Contributors</div>
+        <span class="kicker" data-i18n="s19.kicker">Community & Contributors</span>
         <h2 class="h2" data-i18n="s19.h2">Project Leadership &amp; Acknowledgements</h2>
         <p class="lead" data-i18n="s19.lead">The OWASP Agentic Skills Top 10 is built through the collaborative leadership of global AI security practitioners, researchers, and distinguished industry contributors.</p>
         
         <div class="leadership-grid">
           <div class="leadership-card">
-            <h3 class="lead-role">Project Leadership</h3>
-            <p class="lead-name"><strong>Ken Huang, CISSP</strong> (Project Leader)</p>
-            <p class="lead-desc">CEO, DistributedApps.ai · Fellow &amp; Co-Chair, CSA AI Safety Working Groups · Core Member, OWASP Top 10 for LLM Applications</p>
+            <h3 class="lead-role">👑 Project Leadership</h3>
+            <p class="lead-name">Ken Huang, CISSP</p>
+            <p class="lead-desc">Project Leader · CEO, DistributedApps.ai · Fellow &amp; Co-Chair, CSA AI Safety Working Groups · Core Member, OWASP Top 10 for LLM Applications · AI Security Book Author</p>
           </div>
           
           <div class="leadership-card">
-            <h3 class="lead-role">Co-Leaders &amp; Core Reviewers</h3>
-            <p class="lead-name">Global AI Security Ecosystem Contributors</p>
-            <p class="lead-desc">Distinguished security architects, researchers, and industry reviewers from OWASP Foundation, Cloud Security Alliance (CSA), USF, OpenClaw community, and enterprise AI red-teams.</p>
+            <h3 class="lead-role">🤝 Co-Leaders &amp; Reviewers</h3>
+            <p class="lead-name">Global AI Security Ecosystem</p>
+            <p class="lead-desc">Distinguished security architects, researchers, and red-team contributors across OWASP Foundation, Cloud Security Alliance (CSA), University of San Francisco (USF), and enterprise AI security teams.</p>
           </div>
 
           <div class="leadership-card">
-            <h3 class="lead-role">Standards &amp; Framework Alignment</h3>
-            <p class="lead-desc">Cross-mapped to OWASP Top 10 for LLMs, OWASP AISVS (AI Security Verification Standard), CSA MAESTRO 7-Layer Framework, and Model Context Protocol (MCP) Security Guidelines.</p>
+            <h3 class="lead-role">📐 Framework Alignment</h3>
+            <p class="lead-name">Unified Industry Standards</p>
+            <p class="lead-desc">Interoperable with OWASP Top 10 for LLMs, OWASP AISVS, CSA MAESTRO 7-Layer Architecture, MCP Security Specifications, and NIST AI Risk Management Framework (AI RMF).</p>
           </div>
         </div>
       </div>
@@ -702,30 +743,47 @@
     <!-- Slide 20: Connect & Next Steps -->
     <section class="slide slide--dark" id="s20" data-slide="20" data-title="Connect & Resources" data-i18n-title="s20.title">
       <div class="slide__in">
-        <div class="kicker" data-i18n="s20.kicker">Get Involved</div>
+        <span class="kicker" data-i18n="s20.kicker">Get Involved</span>
         <h2 class="h2" data-i18n="s20.h2">Join the Agentic AI Security Movement</h2>
         
         <div class="connect-grid">
           <div class="connect-left">
-            <p class="connect-p1" data-i18n="s20.p1">Ken Huang, CISSP — AI Book Author · OWASP AIVSS Lead · CSA Fellow · CEO, DistributedApps.ai</p>
-            <p class="connect-p2" data-i18n="s20.p2">Scan the QR code to connect and explore the open-source OWASP Agentic Skills Top 10 framework.</p>
+            <div class="connect-speaker-card">
+              <p class="connect-p1" data-i18n="s20.p1">Ken Huang, CISSP — AI Book Author · OWASP AIVSS Lead · CSA Fellow · CEO, DistributedApps.ai</p>
+              <p class="connect-p2" data-i18n="s20.p2">Scan the QR code to connect and explore the open-source OWASP Agentic Skills Top 10 framework.</p>
+            </div>
             
             <h3 class="connect-more-title" data-i18n="s20.more">Official Resources &amp; Links</h3>
-            <ul class="connect-links">
-              <li><a href="https://github.com/OWASP/www-project-agentic-skills-top-10" target="_blank" rel="noopener" data-i18n="s20.owaspLink">OWASP Project Repository — github.com/OWASP/www-project-agentic-skills-top-10 ↗</a></li>
-              <li><a href="https://www.youtube.com/watch?v=l-uwnCzRRE0" target="_blank" rel="noopener" data-i18n="s20.videoLink">Full Video Tutorial &amp; Walkthrough — YouTube ↗</a></li>
-              <li><a href="https://distributedapps.ai" target="_blank" rel="noopener" data-i18n="s20.siteLink">DistributedApps.ai — Agentic AI Security ↗</a></li>
-              <li><a href="https://maestro-sentinel.com" target="_blank" rel="noopener" data-i18n="s20.maestroLink">MAESTRO Sentinel Assessment Engine — maestro-sentinel.com ↗</a></li>
-            </ul>
+            <div class="connect-links-grid">
+              <a href="https://github.com/OWASP/www-project-agentic-skills-top-10" target="_blank" rel="noopener" class="connect-link-card">
+                <span class="connect-link-icon">🛡️</span>
+                <span data-i18n="s20.owaspLink">OWASP Official Project Repo ↗</span>
+              </a>
+              <a href="https://www.youtube.com/watch?v=l-uwnCzRRE0" target="_blank" rel="noopener" class="connect-link-card">
+                <span class="connect-link-icon">📺</span>
+                <span data-i18n="s20.videoLink">Full Video Walkthrough ↗</span>
+              </a>
+              <a href="https://distributedapps.ai" target="_blank" rel="noopener" class="connect-link-card">
+                <span class="connect-link-icon">🌐</span>
+                <span data-i18n="s20.siteLink">DistributedApps.ai Security ↗</span>
+              </a>
+              <a href="https://maestro-sentinel.com" target="_blank" rel="noopener" class="connect-link-card">
+                <span class="connect-link-icon">⚡</span>
+                <span data-i18n="s20.maestroLink">MAESTRO Sentinel Engine ↗</span>
+              </a>
+            </div>
 
             <div class="connect-actions">
               <a href="https://github.com/OWASP/www-project-agentic-skills-top-10" target="_blank" rel="noopener" class="bar__cta" data-i18n="s20.cta">Contribute on GitHub ↗</a>
-              <a href="#1" class="bar__cta bar__cta--alt">Back to First Slide ↺</a>
+              <a href="#1" class="bar__cta bar__cta--alt" data-i18n="s20.replay">Back to First Slide ↺</a>
             </div>
           </div>
           
           <div class="connect-right">
-            <img src="assets/contact-card.png" alt="Ken Huang Contact QR Code" class="contact-card-hero">
+            <div class="contact-card-frame">
+              <img src="assets/contact-card.png" alt="Ken Huang Contact QR Code" class="contact-card-hero">
+              <div class="contact-card-cap" data-i18n="s20.qrCap">Scan QR to Connect with Ken Huang</div>
+            </div>
           </div>
         </div>
       </div>
