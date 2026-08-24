@@ -1,4 +1,4 @@
-﻿/* ============================================================
+/* ============================================================
    OWASP AGENTIC SKILLS TOP 10 — Presentation Deck Styles
    High-Contrast Modern Cyber-Tech & Editorial Design
    Guaranteed Viewport Constraints (No Scrollbars / Zero Overflow)
@@ -317,93 +317,21 @@ html[lang='zh-CN'] body, .is-zh { font-family: 'Noto Sans SC', 'Inter', system-u
 }
 
 /* ---------- Slide 2: About Speaker & Publications ---------- */
-.about-grid {
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 1.4vw;
-  margin-top: 0.5vh;
-  height: calc(100% - 3.8vh);
-  align-items: stretch;
-  overflow: hidden;
-}
-.about-bio {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  overflow: hidden;
-}
-.about-bullets {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  gap: 0.4vh;
-}
-.about-bullets li {
-  font-size: clamp(0.7rem, 1.5vh, 0.82rem);
-  line-height: 1.3;
-  padding: 0.35vh 0.65rem;
-  background: #fff;
-  border: 1px solid var(--line);
-  border-radius: 6px;
-  box-shadow: var(--shadow);
-  display: flex;
-  align-items: center;
-}
-.about-side {
-  display: flex;
-  flex-direction: column;
-  gap: 0.6vh;
-  justify-content: space-between;
-  height: 100%;
-  overflow: hidden;
-}
-.about-pubs-header {
-  font-size: clamp(0.75rem, 1.6vh, 0.85rem);
-  font-weight: 700;
-  color: var(--ink);
-  margin-bottom: 0.2vh;
-}
-.books-showcase {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0.45rem;
-  background: #fff;
-  padding: 0.45rem;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  box-shadow: var(--shadow);
-}
-.book-cover {
-  width: 100%;
-  height: clamp(65px, 11vh, 95px);
-  object-fit: contain;
-  border-radius: 4px;
-  transition: transform 0.15s;
-}
-.book-cover:hover { transform: scale(1.05); }
-.contact-card-box {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  box-shadow: var(--shadow);
-}
-.contact-card-img {
-  height: clamp(60px, 9.5vh, 85px);
-  width: auto;
-  object-fit: contain;
-  border-radius: 4px;
-}
-.author-link {
-  font-family: var(--hand);
-  font-size: clamp(0.78rem, 1.65vh, 0.92rem);
-  color: var(--accent);
-  font-weight: 700;
-}
+.about{display:grid;grid-template-columns:1.02fr 1.08fr;gap:2vw;margin-top:1.4vh;align-items:start}
+.about__list{list-style:none;padding:0;margin:0;display:grid;gap:.7vh}
+.about__list li{display:flex;gap:.6rem;align-items:center;font-size:clamp(.76rem,1.7vh,.92rem);
+  background:#fff;border:1px solid var(--line);border-radius:10px;padding:.55vh .85rem;box-shadow:var(--shadow)}
+.about__list span{font-size:1.05rem}
+.about__books-card{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.about__books-header{background:rgba(255,106,43,.08);padding:.55vh .85rem;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(.74rem,1.6vh,.86rem);white-space:nowrap;gap:.5rem}
+.about__books-header a{font-family:var(--hand);font-size:clamp(.8rem,1.8vh,.94rem);color:var(--accent);text-decoration:none;font-weight:700;white-space:nowrap;flex-shrink:0}
+.about__books-header a:hover{text-decoration:underline}
+.about__books-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:.35rem;padding:.55rem;background:#fafaf8}
+.about__book-item{display:flex;flex-direction:column;align-items:center;background:#fff;border:1px solid var(--line);border-radius:6px;padding:.25rem .15rem;text-decoration:none;box-shadow:0 1px 4px rgba(0,0,0,.04);transition:transform .18s,border-color .18s,box-shadow .18s}
+.about__book-item:hover{transform:translateY(-2px);border-color:var(--accent);box-shadow:0 4px 12px rgba(255,106,43,.18)}
+.about__book-cover{width:100%;height:clamp(68px,10.2vh,100px);object-fit:contain;border-radius:3px}
+.about__book-title{font-size:.52rem;font-weight:700;color:var(--ink);text-align:center;line-height:1.15;margin-top:.18rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:100%;display:block}
+.about__book-tag{font-size:.44rem;font-weight:800;color:var(--accent);background:rgba(255,106,43,.1);padding:.04rem .18rem;border-radius:2px;margin-top:.10rem;text-transform:uppercase;letter-spacing:.02em;white-space:nowrap;line-height:1.1}
 .author-link:hover { text-decoration: underline; }
 
 /* ---------- Slide 3: Paradigm Shift Table ---------- */
