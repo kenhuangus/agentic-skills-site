@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -14,12 +14,6 @@
   
   <!-- Stylesheet -->
   <link rel="stylesheet" href="assets/style.css">
-  
-  <!-- Scripts -->
-  <script src="assets/rough.min.js"></script>
-  <script src="assets/i18n.js"></script>
-  <script src="assets/diagrams.js"></script>
-  <script src="assets/deck.js"></script>
 </head>
 <body>
   <!-- Top Navigation Bar -->
@@ -61,7 +55,7 @@
         <div class="hero__actions">
           <a href="https://github.com/OWASP/www-project-agentic-skills-top-10" target="_blank" rel="noopener" class="bar__cta" data-i18n="hero.repo">OWASP Official Project ↗</a>
           <a href="https://www.youtube.com/@KenHuang-h2n" target="_blank" rel="noopener" class="bar__cta bar__cta--alt" data-i18n="hero.video">Full Video Tutorial ↗</a>
-          <a href="#3" class="bar__cta">Start Presentation ➔</a>
+          <a href="#2" class="bar__cta">Start Presentation ➔</a>
         </div>
       </div>
     </section>
@@ -687,17 +681,19 @@
 
   </main>
 
-  <!-- Bottom Control Bar -->
-  <footer class="ctrl">
-    <div class="ctrl__prog"><div class="ctrl__prog-fill" id="progress"></div></div>
-    <div class="ctrl__left">
-      <button class="ctrl__nav" id="prevBtn" data-i18n="ui.prev" aria-label="Previous slide">‹ Prev</button>
-      <span class="ctrl__page" id="count">1 / 20</span>
-    </div>
-    <div class="ctrl__dots" id="dots"></div>
-    <div class="ctrl__right">
-      <button class="ctrl__nav ctrl__nav--next" id="nextBtn" data-i18n="ui.next" aria-label="Next slide">Next ›</button>
-    </div>
-  </footer>
+    <!-- Navigation Controls -->
+  <nav class="ctrl">
+    <button class="ctrl__btn" id="prevBtn" aria-label="Previous slide" data-i18n="ui.prev" data-i18n-aria="ui.prevAria">‹ Prev</button>
+    <div class="dots" id="dots"></div>
+    <span class="ctrl__count" id="count">1 / 20</span>
+    <button class="ctrl__btn ctrl__btn--accent" id="nextBtn" aria-label="Next slide" data-i18n="ui.next" data-i18n-aria="ui.nextAria">Next ›</button>
+  </nav>
+  <div class="progress" id="progress"></div>
+
+  <!-- Scripts loaded at end of body -->
+  <script src="assets/i18n.js"></script>
+  <script src="assets/rough.min.js"></script>
+  <script src="assets/diagrams.js"></script>
+  <script src="assets/deck.js"></script>
 </body>
 </html>
