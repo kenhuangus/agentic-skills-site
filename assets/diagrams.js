@@ -113,11 +113,17 @@
     rect(s, 20, 12, 840, 496, { fill: COL.lightBg, fillStyle: "solid", stroke: COL.line, strokeWidth: 1.2 });
     chip(s, 240, 24, 400, 40, zh ? "OWASP Agentic Skills Top 10 · AST01–AST10" : "OWASP Agentic Skills Top 10 · AST01–AST10", COL.accent, { size: 13.5, fill: hex(COL.accent, 0.15) });
 
-    const colW = 400;
+    const padX = 28;
+    const boxX = 20;
+    const boxW = 840;
+    const innerX = boxX + padX;
+    const innerW = boxW - padX * 2;
+    const gapX = 32;
+    const colW = Math.floor((innerW - gapX) / 2);
     const rowH = 72;
-    const gapX = 40;
-    const startX = [40, 40 + colW + gapX];
+    const startX = [innerX, innerX + colW + gapX];
     const startY = 88;
+    const dividerX = innerX + colW + gapX / 2;
 
     risks.forEach((risk, idx) => {
       const col = idx < 5 ? 0 : 1;
@@ -127,11 +133,11 @@
 
       rect(s, x, y, colW, 58, { fill: hex(risk.col, 0.08), fillStyle: "solid", stroke: risk.col, strokeWidth: 2 });
       rect(s, x, y, 8, 58, { fill: risk.col, fillStyle: "solid", stroke: risk.col, strokeWidth: 0 });
-      chip(s, x + 20, y + 10, 62, 38, risk.code, risk.col, { size: 12, weight: 700, fill: hex(risk.col, 0.18) });
-      txt(s, x + 96, y + 35, risk.title, { size: 15.5, weight: 700, col: COL.ink });
+      chip(s, x + 16, y + 10, 58, 38, risk.code, risk.col, { size: 11.5, weight: 700, fill: hex(risk.col, 0.18) });
+      txt(s, x + 84, y + 35, risk.title, { size: 14.5, weight: 700, col: COL.ink });
     });
 
-    line(s, 440, 88, 440, 448, { stroke: COL.line, strokeWidth: 1.2, strokeDasharray: "6 4" });
+    line(s, dividerX, startY, dividerX, startY + rowH * 5 - 14, { stroke: COL.line, strokeWidth: 1.2 });
   }
 
   /* 2. Executive Risk Map (4 Quadrants) */
